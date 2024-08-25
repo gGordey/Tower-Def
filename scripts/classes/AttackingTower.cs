@@ -16,6 +16,7 @@ public partial class AttackingTower : TowerClass
 	{
 		AttackingArea = GetNode<Area3D>("AttackArea");
 		AttackingArea.BodyEntered += Entr;
+		AttackingArea.BodyExited += Exit;
 		Timer AttackTimer = new Timer();
 		AttackTimer.WaitTime = AttackTime;
 		AddChild(AttackTimer);
@@ -40,6 +41,13 @@ public partial class AttackingTower : TowerClass
 		if (Body.IsInGroup("enemy"))
 		{
 			CurrentEnemeis.Add((EnemyClass)Body);
+		}
+	}
+	public void Exit(Node3D Body)
+	{
+		if (Body.IsInGroup("enemy"))
+		{
+			CurrentEnemeis.Remove((EnemyClass)Body);
 		}
 	}
 }

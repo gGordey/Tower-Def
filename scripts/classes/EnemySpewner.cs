@@ -16,6 +16,11 @@ public partial class EnemySpewner : Node3D
 	{
 		Global = GetNode<Global>("/root/Global");
 		Global.EnemySpawner = this;
+
+		Timer SpawnTimer = new Timer();
+		AddChild(SpawnTimer);
+		SpawnTimer.Start();
+		SpawnTimer.Timeout += SpawnEnemy;
 	}
 
 	public override void _Process(double delta)

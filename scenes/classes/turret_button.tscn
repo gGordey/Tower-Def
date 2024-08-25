@@ -12,3 +12,11 @@ ignore_texture_size = true
 script = ExtResource("1_rgk02")
 Tower = ExtResource("2_d8ram")
 Icon = ExtResource("3_sllbo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 107.0
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 30
+text = "NEW TOWER"
