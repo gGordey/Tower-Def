@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b815r5fq84i5p"]
+
+[ext_resource type="Texture2D" uid="uid://cjkqta605ftlw" path="res://assets/2d/tile_icon.png" id="1_370ob"]
+[ext_resource type="Script" path="res://scripts/classes/TileInterface.cs" id="2_usuhf"]
+
+[node name="TileInterface" type="Sprite3D"]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0.00635748, 0)
+texture = ExtResource("1_370ob")
+script = ExtResource("2_usuhf")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlruusjf7ah4b"]
+
+[ext_resource type="PackedScene" uid="uid://b8mwh5vfurctv" path="res://scenes/classes/tower.tscn" id="1_ktgnv"]
+[ext_resource type="Script" path="res://scripts/classes/AttackingTower.cs" id="2_jg0mg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p85tb"]
+height = 0.638881
+radius = 1.40666
+
+[node name="AttackingTower" instance=ExtResource("1_ktgnv")]
+script = ExtResource("2_jg0mg")
+damage = 2
+AttackTime = 1.2
+
+[node name="AttackArea" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" index="0"]
+shape = SubResource("CylinderShape3D_p85tb")

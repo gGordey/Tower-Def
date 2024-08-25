@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcdb1nawgl5yn"]
+
+[ext_resource type="PackedScene" uid="uid://dqbwpet2otr0n" path="res://scenes/classes/tile_grid.tscn" id="1_5kk41"]
+[ext_resource type="PackedScene" uid="uid://pupbl3iltrg2" path="res://scenes/classes/enemy_spewner.tscn" id="1_74upi"]
+[ext_resource type="PackedScene" uid="uid://5xaejupkhaev" path="res://scenes/classes/turret_button.tscn" id="3_ailsp"]
+
+[node name="game" type="Node"]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="game_space" type="Node3D" parent="world"]
+
+[node name="EnemySpewner" parent="world/game_space" instance=ExtResource("1_74upi")]
+
+[node name="TileGrid" parent="world/game_space" instance=ExtResource("1_5kk41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="EnemyRotaters" type="Node3D" parent="world/game_space"]
+
+[node name="main_camere" type="Camera3D" parent="world"]
+transform = Transform3D(0.999781, 0.0202569, -0.0053143, 0, 0.253758, 0.967268, 0.0209424, -0.967056, 0.253702, -0.20093, 2, 0.0136499)
+projection = 1
+current = true
+size = 5.30995
+
+[node name="Camera3D2" type="Camera3D" parent="world"]
+transform = Transform3D(0.996779, -0.0775739, 0.0203511, -0.0210597, -0.00832728, 0.999744, -0.0773845, -0.996952, -0.00993414, -0.20093, 12.2682, 0.0136499)
+size = 2.40846
+
+[node name="light" type="Node3D" parent="world"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world/light"]
+transform = Transform3D(-0.858416, -0.373008, 0.352118, 0.108482, 0.53891, 0.835349, -0.501351, 0.755275, -0.422144, 0, 0, 0)
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TurretButton" parent="ui" instance=ExtResource("3_ailsp")]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 90.0
+offset_right = 505.0
+offset_bottom = 240.0

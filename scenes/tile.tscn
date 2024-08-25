@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://hnxkyq4vu8k6"]
+
+[ext_resource type="Script" path="res://scripts/Tile.cs" id="1_cn6bh"]
+[ext_resource type="PackedScene" uid="uid://b815r5fq84i5p" path="res://scenes/classes/TileInterface.tscn" id="2_ji5f6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l42bq"]
+diffuse_mode = 3
+albedo_color = Color(0.24, 0.13704, 0.0528, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_awpxl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufgg7"]
+size = Vector3(0.333008, 0.0825195, 0.335693)
+
+[node name="Tile" type="StaticBody3D" groups=["tile"]]
+script = ExtResource("1_cn6bh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.335, 0, 0, 0, -1.46433e-08, 0.335, 0, -0.335, -1.46433e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_l42bq")
+mesh = SubResource("QuadMesh_awpxl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000366211)
+shape = SubResource("BoxShape3D_ufgg7")
+
+[node name="RayCast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 2, 0)
+
+[node name="TileInterface" parent="." instance=ExtResource("2_ji5f6")]
+transform = Transform3D(0.32, 0, 0, 0, -1.39876e-08, -0.32, 0, 0.32, -1.39876e-08, 0, 0.0131997, 0)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://yj74wntshr74"]
+
+[ext_resource type="Texture2D" uid="uid://dwkyrs3sf5ed6" path="res://icon.svg" id="1_jf27q"]
+[ext_resource type="Script" path="res://scripts/classes/EnemyClass.cs" id="2_fk6ln"]
+[ext_resource type="PackedScene" uid="uid://dxp8lm53ppcmr" path="res://scenes/classes/progress_bar.tscn" id="3_w8hdm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1ylx"]
+size = Vector3(0.256012, 1, 0.131134)
+
+[node name="EnemyClass" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("2_fk6ln")
+Sprite = ExtResource("1_jf27q")
+_speed = 1.0
+_hp = 10
+scale = 0.5
+
+[node name="EnemySprite" type="Sprite3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00108337, 0, 0.00114441)
+shape = SubResource("BoxShape3D_d1ylx")
+
+[node name="ProgressBar" parent="." instance=ExtResource("3_w8hdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.160718, 0.534589, -0.0722362)

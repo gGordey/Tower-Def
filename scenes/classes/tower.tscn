@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8mwh5vfurctv"]
+
+[ext_resource type="Script" path="res://scripts/classes/TowerClass.cs" id="1_xoyp2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ilqux"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wl8ls"]
+size = Vector3(0.741638, 1, 0.725037)
+
+[node name="Tower" type="StaticBody3D" groups=["tower"]]
+script = ExtResource("1_xoyp2")
+size = Vector2(2, 2)
+life_time = 30.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+mesh = SubResource("BoxMesh_ilqux")
+
+[node name="life_timer" type="Timer" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["tower"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0144958, 0, -0.00619507)
+shape = SubResource("BoxShape3D_wl8ls")

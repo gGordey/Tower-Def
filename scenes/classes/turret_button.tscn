@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://5xaejupkhaev"]
+
+[ext_resource type="Script" path="res://scripts/classes/TurretButton.cs" id="1_rgk02"]
+[ext_resource type="PackedScene" uid="uid://dlruusjf7ah4b" path="res://scenes/classes/attacking_tower.tscn" id="2_d8ram"]
+[ext_resource type="Texture2D" uid="uid://dwkyrs3sf5ed6" path="res://icon.svg" id="3_sllbo"]
+
+[node name="TurretButton" type="TextureButton"]
+custom_minimum_size = Vector2(150, 150)
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+script = ExtResource("1_rgk02")
+Tower = ExtResource("2_d8ram")
+Icon = ExtResource("3_sllbo")

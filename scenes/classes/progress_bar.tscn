@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxp8lm53ppcmr"]
+
+[ext_resource type="Script" path="res://scripts/classes/ProgressBar.cs" id="1_s1akb"]
+[ext_resource type="Texture2D" uid="uid://dhkpgyytusjit" path="res://assets/2d/progress_back_groung.png" id="2_876ff"]
+[ext_resource type="Texture2D" uid="uid://b2q5bp3v16e7w" path="res://assets/2d/progress_fore_ground.png" id="3_25b7x"]
+
+[node name="ProgressBar" type="Sprite3D"]
+texture = ExtResource("2_876ff")
+script = ExtResource("1_s1akb")
+ProgressBackGround = ExtResource("2_876ff")
+ProgressForeGround = ExtResource("3_25b7x")
+MaxValue = 15.0
+BaseSize = 0.1
+
+[node name="ProgressFill" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.248414)
+texture = ExtResource("3_25b7x")

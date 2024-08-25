@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqbwpet2otr0n"]
+
+[ext_resource type="Script" path="res://scripts/classes/GridPlace.cs" id="1_n262v"]
+[ext_resource type="PackedScene" uid="uid://hnxkyq4vu8k6" path="res://scenes/tile.tscn" id="2_qlu54"]
+
+[node name="TileGrid" type="Node3D"]
+script = ExtResource("1_n262v")
+tiles_count = Vector2(10, 10)
+TileScene = ExtResource("2_qlu54")

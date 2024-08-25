@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8h1bhoana55e"]
+
+[ext_resource type="Script" path="res://scripts/classes/EnemyRotater.cs" id="1_cu6qy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofndg"]
+size = Vector3(0.0576589, 1, 0.623582)
+
+[node name="EnemyRotater" type="Area3D"]
+script = ExtResource("1_cu6qy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00463045, 0, 4.86374e-05)
+shape = SubResource("BoxShape3D_ofndg")
