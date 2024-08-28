@@ -7,6 +7,7 @@ public partial class AttackingTower : TowerClass
 {
 	[Export] private int damage;
 	[Export] public float AttackTime;
+	[Export] public int AttackRange = 1;
 
 	public Area3D AttackingArea;
 
@@ -17,6 +18,7 @@ public partial class AttackingTower : TowerClass
 		AttackingArea = GetNode<Area3D>("AttackArea");
 		AttackingArea.BodyEntered += Entr;
 		AttackingArea.BodyExited += Exit;
+		AttackingArea.Scale = new Vector3 (AttackRange*0.3f, 1, AttackRange*0.3f);
 		Timer AttackTimer = new Timer();
 		AttackTimer.WaitTime = AttackTime;
 		AddChild(AttackTimer);
