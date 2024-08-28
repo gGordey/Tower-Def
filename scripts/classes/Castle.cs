@@ -16,7 +16,7 @@ public partial class Castle : StaticBody3D
 			_hp = value;
 			if (_hp <= 0)
 			{
-				GD.Print("Damge");
+				GD.Print("Lose");
 			}
 		}
 	}
@@ -26,15 +26,17 @@ public partial class Castle : StaticBody3D
 	{
 		Global = GetNode<Global>("/root/Global");
 		EnterArea = GetNode<Area3D>("Area3D");
-        EnterArea.BodyEntered += Entr;
-		Position = new Vector3(Global.CurrentGrid.tiles_count.X*Global.CurrentGrid.tile_size,0,0);
+		EnterArea.BodyEntered += Entr;
+		Position = new Vector3 ();
+		Global.Castle = this;
 	}
 	public void Entr(Node3D Body)
 	{
 		if (Body.IsInGroup("enemy"))
 		{
 			HP--;
-			Body.QueueFree();
+			//Body.QueueFree();
+			GD.Print("Damaged");
 		}
 	}
 }

@@ -34,9 +34,6 @@ public partial class ProgressBar : Sprite3D
 
 	public void ChangeValue()
 	{
-		GD.Print("MaxValue " + MaxValue);
-		GD.Print("Value " + Value);
-		GD.Print("BaseSize " + BaseSize);
 		ForeGround.Scale = new Vector3 (Value / MaxValue, 1,1);//BaseSize, BaseSize);
 	}
 }

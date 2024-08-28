@@ -8,6 +8,7 @@ public partial class Global : Node
 	public GridPlace CurrentGrid;
 	public Node3D GameSpace;
 	public EnemySpewner EnemySpawner;
+	public Castle Castle;
 
 	public override void _Ready()
 	{

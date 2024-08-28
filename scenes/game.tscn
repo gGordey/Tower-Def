@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcdb1nawgl5yn"]
+[gd_scene load_steps=6 format=3 uid="uid://bcdb1nawgl5yn"]
 
 [ext_resource type="PackedScene" uid="uid://dqbwpet2otr0n" path="res://scenes/classes/tile_grid.tscn" id="1_5kk41"]
 [ext_resource type="PackedScene" uid="uid://pupbl3iltrg2" path="res://scenes/classes/enemy_spewner.tscn" id="1_74upi"]
 [ext_resource type="PackedScene" uid="uid://dslb2mnpn46fr" path="res://scenes/classes/castle.tscn" id="1_xbp8t"]
 [ext_resource type="PackedScene" uid="uid://5xaejupkhaev" path="res://scenes/classes/turret_button.tscn" id="3_ailsp"]
+[ext_resource type="Script" path="res://scripts/Ui.cs" id="4_f6lqb"]
 
 [node name="game" type="Node"]
 
@@ -42,10 +43,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_f6lqb")
 
-[node name="TurretButton" parent="ui" instance=ExtResource("3_ailsp")]
+[node name="InGame" type="Control" parent="ui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TurretButton" parent="ui/InGame" instance=ExtResource("3_ailsp")]
 layout_mode = 0
 offset_left = 355.0
 offset_top = 90.0
 offset_right = 505.0
 offset_bottom = 240.0
+
+[node name="LoseScrean" type="Control" parent="ui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

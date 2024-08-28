@@ -58,6 +58,7 @@ public partial class GridPlace : Node3D
 			FillFreeTiles();
 			CreateGrid();
 			ClearPath();
+			Global.Castle.Position = new Vector3 (PathTiles[PathTiles.Count-1].X*(tile_size), 0, PathTiles[PathTiles.Count-1].Y*(tile_size)) + Position;
 		}
 	}
 

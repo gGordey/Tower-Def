@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/classes/Castle.cs" id="1_hbh8w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ahok6"]
-size = Vector3(9.45502, 1, 0.234497)
+size = Vector3(0.811936, 1, 0.866241)
 
 [node name="Castle" type="StaticBody3D"]
 script = ExtResource("1_hbh8w")
@@ -11,5 +11,5 @@ script = ExtResource("1_hbh8w")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00437926, 0, 0.00431037)
 shape = SubResource("BoxShape3D_ahok6")
