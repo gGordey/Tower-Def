@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dslb2mnpn46fr"]
+
+[ext_resource type="Script" path="res://scripts/classes/Castle.cs" id="1_hbh8w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahok6"]
+size = Vector3(9.45502, 1, 0.234497)
+
+[node name="Castle" type="StaticBody3D"]
+script = ExtResource("1_hbh8w")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_ahok6")

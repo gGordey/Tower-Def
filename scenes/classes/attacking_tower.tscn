@@ -14,22 +14,22 @@ size = Vector3(0.341675, 0.711914, 0.358643)
 
 [node name="AttackingTower" instance=ExtResource("1_ktgnv")]
 script = ExtResource("2_jg0mg")
-damage = 2
+damage = 1
 AttackTime = 1.2
-AttackRange = 3
+AttackRange = 1
 size = Vector2(1, 1)
 
-[node name="AttackArea" type="Area3D" parent="." index="1"]
+[node name="AttackArea" type="Area3D" parent="." index="0"]
 transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, -0.347461, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31944, 0)
 shape = SubResource("CylinderShape3D_p85tb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(0.25, 0, 0, 0, 0.64, 0, 0, 0, 0.25, 0, 0.00560415, 0)
 mesh = SubResource("BoxMesh_o0g4d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00286865, 0.00280344, -0.00012207)
 shape = SubResource("BoxShape3D_bf46p")
