@@ -204,6 +204,11 @@ public partial class GridPlace : Node3D
 	{
 		EnemyRotater NewRot = EnemyRotater.Instantiate<EnemyRotater>();
 		NewRot.Position = GlobalPosition + new Vector3((Tile.X-1)*tile_size+(Tile.X-1)*tiles_offset, 0, (Tile.Y-1)*tile_size+(Tile.Y-1)*tiles_offset);
+		
+		if (NewRot.Position.X <= -2.6)
+		{
+			return;
+		}
 		NewRot.rot = rot;
 		GetParent().GetNode("EnemyRotaters").AddChild(NewRot);
 	}

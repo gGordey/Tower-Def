@@ -28,7 +28,7 @@ public partial class AttackingTower : TowerClass
 
 	public void Attack()
 	{
-		if (CurrentEnemeis.Count > 0)
+		if (!Global.IsLosed && CurrentEnemeis.Count > 0)
 		{
 			CurrentEnemeis[0].CurentHp -= damage;
 			if (CurrentEnemeis[0].CurentHp <= 0)

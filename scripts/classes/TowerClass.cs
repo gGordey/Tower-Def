@@ -40,6 +40,7 @@ public partial class TowerClass : StaticBody3D
 
 	public override void _Process(double delta)
 	{
+		if (Global.IsLosed) { return; }
 		if (Input.IsActionPressed("mouse") && !is_placed)
 		{
 			Global.CurrentGrid.IsTowerPicked = true;

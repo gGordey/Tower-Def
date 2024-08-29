@@ -10,6 +10,8 @@ public partial class EnemyClass : CharacterBody3D
 	[Export] private float _speed;
 	[Export] private int _hp;
 	[Export] private float scale ;
+	
+	public Global Global;
 
 	private string currentDir;
 	private Dictionary<string, Vector2> DirVectors = new()
@@ -43,10 +45,12 @@ public partial class EnemyClass : CharacterBody3D
 		MovingDir = "right";
 		SpriteNode.Rotation = new Vector3(75.8f*3.14f,0,0);
 		SpriteScale = scale;
+		Global = GetNode<Global>("/root/Global");
 	}
 
 	public override void _Process(double delta)
 	{
+		if (Global.IsLosed) {return;}
 		Move((float)delta);
 	}
 

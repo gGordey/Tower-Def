@@ -10,6 +10,8 @@ public partial class Global : Node
 	public EnemySpewner EnemySpawner;
 	public Castle Castle;
 
+	public bool IsLosed = false;
+
 	public override void _Ready()
 	{
 		random = new RandomNumberGenerator();

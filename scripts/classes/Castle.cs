@@ -17,6 +17,7 @@ public partial class Castle : StaticBody3D
 			if (_hp <= 0)
 			{
 				GD.Print("Lose");
+				Global.IsLosed = true;
 			}
 		}
 	}
@@ -35,7 +36,7 @@ public partial class Castle : StaticBody3D
 		if (Body.IsInGroup("enemy"))
 		{
 			HP--;
-			//Body.QueueFree();
+			Body.QueueFree();
 			GD.Print("Damaged");
 		}
 	}
